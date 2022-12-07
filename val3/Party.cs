@@ -15,11 +15,18 @@ namespace val3
         public int NumberOfVotes { get; set; }
 
 
-        public Party()
+        public Party(string name, string abbreviation)
         {
-            
+            Name = name;
+            Abbreviation = abbreviation;
 
         }
-        //public Party() { }
+        public Party() { }
+
+        // SKAPA EN OVERRIDE TO STRING METOD FÖR ATT FÅ NAMN PÅ LISTA
+        public override string ToString()
+        {
+            return Name; 
+        }
     }
 }

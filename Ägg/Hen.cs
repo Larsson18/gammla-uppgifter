@@ -14,6 +14,7 @@ namespace Ägg
 
 
         // eftersom metoden har med hönan att göra lägger jag den i denna klass
+        // jag skapar en random int som går in i en if-sats där ett procentuellt värde avgör ifall den returnar ett ägg eller inte.
         public int LayEgg() 
         {
             int eggOdds = random.Next(100);

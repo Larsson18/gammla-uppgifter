@@ -30,16 +30,20 @@ namespace bil2
 
         public void RandomNumbers() 
         {
+            // en array utav 3st int skapas vilket kommer representera vår regplåt
             int[] numbers = new int[3];
 
             Random random = new Random();
+            // en for loop som går igenom alla värden (i) inom numbers.Length
             for (int i = 0; i < numbers.Length; i++)
             {
+                // för varje numbers(3st) skapas en ny slumpmäsig int som bli värden för fack 1,2,3
                 numbers[i] = random.Next(0, 9);
                 lblCode1.Content = numbers[0];
                 lblCode2.Content = numbers[1];
                 lblCode3.Content = numbers[2];
             }
+            //if-satsen kollar ifall checkboxen för en spelare är klickade ifall de är klickade kommer poäng ej räknas, annars räknar den ihopp det som vanligt.
             if (chk1.IsChecked == false)
             {
                 player1 += numbers[0];
@@ -57,6 +61,7 @@ namespace bil2
 
         private void btnBet_Click(object sender, RoutedEventArgs e)
         {
+            // Själva knappen som sedan kallar på metoden RandomNumbers och sedan ger labels sina värden efter.
             RandomNumbers();
             lblTotal1.Content = player1;
             lblTotal2.Content = player2;

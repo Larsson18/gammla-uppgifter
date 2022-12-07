@@ -28,12 +28,14 @@ namespace Ägg
         }
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
+            //skapar ints för inputen av de totala äggen och sedan gör matten
             int totalEggs = int.Parse(txtInput.Text);
             int totalPackages = totalEggs / 12;
             double price = totalPackages * 12 * 3.56;
 
             txtResult.Text = $" Du ska leverera {totalPackages} st kartonger till ett pris av {price} kronor.";
 
+            //skapar ints som används som counters för att se hur många trasiga och hela ägg som finns
             int brokenEgg = 0, notBrokenEgg = 0;
 
             bool[] isBroken = new bool[] { true, true, true, false, true, false,
@@ -46,6 +48,7 @@ namespace Ägg
             true, true, false, false, true, true, false, true, true, false, false,
             true, true, true, false, false, false, false, true };
 
+            // foreach vid nmn isEggBroken går igenom isBroken arrayen och ger ett bool värde.
             foreach (bool isEggBroken in isBroken)
             {
                 if (isEggBroken == true)
@@ -63,6 +66,7 @@ namespace Ägg
             
         }
 
+        // 
         public int CountEggs() 
         {
             int eggs = 0;
@@ -83,6 +87,7 @@ namespace Ägg
             "2SE123-6", "0SE123-5", "2SE144-6", "0SE144-6", "1SE122-4", "1SE675-6",
             "0SE122-6", "2SE144-2", "2SE122-3", "1SE234-5", "1SE564-2", "1SE144-5",
             "0SE144-1", "1SE144-3", "1SE122-4", "1SE123-1"};
+            // här har jag gjort en foreach loop i formen string som går igenom "egg" inom pinkCodes arrayen för att se ifall egg(item i array) innehåller "123".
             foreach (string egg in pinkCodes)
             {
                 if (egg.Contains("123"))
@@ -97,6 +102,7 @@ namespace Ägg
         // jag har slagit ihopp uppgift 5 och 7 till en knapp för att enklare gå igenom metoderna
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            // skapar en Henhouse där constructorn säger att värdet (250) är en variabel vid namn totalHens, sedan kallas en annan metod.
             HenHouse henHouse = new HenHouse(250);
             henHouse.TotalEggs(allEggs);
         }

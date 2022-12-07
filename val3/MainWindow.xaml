@@ -12,11 +12,15 @@
         <Label x:Name="lblAbbreviation" Content="Förkortning" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Height="21" Width="85"/>
         <TextBox x:Name="txtAbbreviation" HorizontalAlignment="Left" Margin="10,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142" Height="14"/>
         <Button x:Name="btnRegister" Content="Registrera" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Height="15" Width="67" Click="btnRegister_Click"/>
-        <ListBox x:Name="lstParties" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="179,10,426,163" SelectionChanged="lstParties_SelectionChanged"/>
+        <ListBox x:Name="lstParties"  Margin="179,10,426,163" />
         <Label x:Name="lblParty" Content="" HorizontalAlignment="Left" Margin="379,141,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblPartyVotes" Content="Antal röster" HorizontalAlignment="Left" Margin="404,172,0,0" VerticalAlignment="Top" Width="70"/>
         <TextBox x:Name="txtVotes" HorizontalAlignment="Left" Margin="379,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnVotes" Content="Rapportera" HorizontalAlignment="Left" Margin="406,226,0,0" VerticalAlignment="Top" Width="68" Click="btnVotes_Click"/>
+        <Button x:Name="btnChoose" Content="Välj parti" HorizontalAlignment="Left" Margin="324,271,0,0" VerticalAlignment="Top" Click="btnChoose_Click"/>
+        <TextBox x:Name="txtSearchShort" HorizontalAlignment="Left" Margin="21,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSearch" Content="Sök" HorizontalAlignment="Left" Margin="69,372,0,0" VerticalAlignment="Top" Click="btnSearch_Click"/>
+        <Label x:Name="lblSearchResult" Content="Label" HorizontalAlignment="Left" Margin="156,345,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

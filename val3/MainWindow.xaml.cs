@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,31 +23,56 @@ namespace val3
     {
         Election election = new Election();
         Party party = new Party();
-
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        public void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            Party party = new Party()
-            { Name = txtName.Text, Abbreviation = txtAbbreviation.Text };
-            
+            //Kallar på party klassen och dess variabler för att sätta värde osv
+            Party party = new Party(txtName.Text, txtAbbreviation.Text);
+
+            // lägger till de i List<>
             election.Parties.Add(party);
-            lstParties.ItemsSource = party;                                      
+
+            // NULL LISTBOX innan värden tilldelas(brukar hjälpa)
+            lstParties.ItemsSource = null;
+            lstParties.ItemsSource = election.Parties;
+            lstParties.SelectedItem = party.Name;
+            
+
+
+            txtVotes.Text = party.NumberOfVotes.ToString();
+            
             
 
         }
-
+        // simpel int.parse txt för att få in det i en int
         private void btnVotes_Click(object sender, RoutedEventArgs e)
         {
             party.NumberOfVotes = int.Parse(txtVotes.Text);
         }
 
-        private void lstParties_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        // Skapade en knapp som väljer det alternativet i listboxen som har klickats på och visar det i en label.
+        private void btnChoose_Click(object sender, RoutedEventArgs e)
+        {
+            lblParty.Content = lstParties.SelectedItem.ToString();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            // kallar på klassen 
+            party = election.FindPartyByShort(txtAbbreviation.Text);
+            if (party== null)
+            {
+                lblSearchResult.Content = "Partiet saknas";
+            }
+            else
+            {
+                lblSearchResult.Content = party.Name;
+            }
         }
     }
 }
