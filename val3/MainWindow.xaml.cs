@@ -63,14 +63,16 @@ namespace val3
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            // kallar på klassen 
+            // använder party och kallar på klassen inom election vid namn FINDPARTYBYSHORT och har abbreviation text window som indata
             party = election.FindPartyByShort(txtAbbreviation.Text);
+            // if party ( resultatet) = null(inget) tas inget parti fram
             if (party== null)
             {
                 lblSearchResult.Content = "Partiet saknas";
             }
             else
             {
+                // annars visas partiets namn som har förkortningen som var inlaggt.
                 lblSearchResult.Content = party.Name;
             }
         }

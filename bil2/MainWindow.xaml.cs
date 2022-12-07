@@ -20,7 +20,7 @@ namespace bil2
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        CarRegister carRegister = new CarRegister();
         public MainWindow()
         {
             InitializeComponent();
@@ -59,6 +59,20 @@ namespace bil2
             }
         }
 
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            // skapar ett nytt objekt (bil) med värden
+            Car car = new Car()
+            {
+                Color = txtColor.Text,
+                LicensePlate = txtReg.Text,
+                Make = txtMake.Text,
+                Model = txtModel.Text
+            };
+            // kallar på resultatet utav en metod
+            bool result = carRegister.AddCar(car);
+        }
+
         private void btnBet_Click(object sender, RoutedEventArgs e)
         {
             // Själva knappen som sedan kallar på metoden RandomNumbers och sedan ger labels sina värden efter.
@@ -67,18 +81,13 @@ namespace bil2
             lblTotal2.Content = player2;
             lblTotal3.Content = player3;
 
-            Car car = new Car();
-            { 
-                
-            }
-        }
-
-
-
-        public void AddCar()
-        {
             
 
+        
         }
+
+
+
+
     }
 }
