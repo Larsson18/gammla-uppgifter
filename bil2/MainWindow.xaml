@@ -1,0 +1,54 @@
+﻿<Window x:Class="bil2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bil2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="610,7,-560,3">
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCode1" Content="0" FontSize="18"/>
+                <Label x:Name="lblCode2" Content="0" Margin="16,0,0,0" FontSize="18"/>
+                <Label x:Name="lblCode3" Content="0" Margin="16,0,0,0" FontSize="18"/>
+                <Label Content="-- Regnummer " />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="chk1" Margin="0,0,2,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="chk2" Margin="0,0,2,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="chk3" Margin="0,0,2,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <Label Content=" -- Stanna " Padding="0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblTotal1" HorizontalAlignment="Right" Content="0" Margin="2,0,6,0" FontSize="15"/>
+                <Label x:Name="lblTotal2" HorizontalAlignment="Right" Content="0" Margin="6,0,6,0" FontSize="15"/>
+                <Label x:Name="lblTotal3" HorizontalAlignment="Right" Content="0" Margin="6,0,0,0" FontSize="15"/>
+                <Label Content="-- Poäng " />
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="btnBet" Content="Satsa" HorizontalAlignment="Left" Margin="625,111,0,0" VerticalAlignment="Top" Height="29" Width="98" Click="btnBet_Click"/>
+        <Button x:Name="btnClear" Content="Rensa" HorizontalAlignment="Left" Margin="625,158,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
+        <Label x:Name="lblMake" Content="Märke" HorizontalAlignment="Left" Margin="32,33,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMake" HorizontalAlignment="Left" Margin="32,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblModel" Content="Modell" HorizontalAlignment="Left" Margin="32,87,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Margin="32,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblReg" Content="Registreringsnummer" HorizontalAlignment="Left" Margin="32,140,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtReg" HorizontalAlignment="Left" Margin="32,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblColor" Content="Färg" HorizontalAlignment="Left" Margin="32,194,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Margin="32,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnRegister" Content="Registrera" HorizontalAlignment="Left" Margin="32,242,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
